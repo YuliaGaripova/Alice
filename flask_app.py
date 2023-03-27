@@ -22,6 +22,12 @@ logging.basicConfig(level=logging.INFO)
 # то мы уберем одну подсказку. Как будто что-то меняется :)
 sessionStorage = {}
 
+@app.route('/')
+# Функция получает тело запроса и возвращает ответ.
+# Внутри функции доступен request.json - это JSON, который отправила нам Алиса в запросе POST
+def hello():
+    return 'hello'
+
 
 @app.route('/post', methods=['POST'])
 # Функция получает тело запроса и возвращает ответ.
